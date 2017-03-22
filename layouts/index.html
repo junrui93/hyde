@@ -6,7 +6,7 @@
     <div class="content container">
 <div class="posts">
 
-      {{ range .Data.Pages }}
+      {{ range .Paginator.Pages }}
   <div class="post">
     <h1 class="post-title">
       <a href="{{ .Permalink }}">
@@ -22,6 +22,21 @@
     </ul>
 
   </div>
+  {{ end }}
+</div>
+<div class="pagination">
+  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+    {{ if .Paginator.HasPrev }}
+    <a class="pagination-item older" href="{{ .Paginator.Prev.URL }}">Older</a>
+    {{ else }}
+    <span class="pagination-item older">Older</span>
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+    <a class="pagination-item newer" href="{{ .Paginator.Next.URL }}">Newer</a>
+    {{ else }}
+    <span class="pagination-item newer">Newer</span>
+    {{ end }}
   {{ end }}
 </div>
 </div>

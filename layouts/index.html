@@ -24,8 +24,9 @@
   </div>
   {{ end }}
 </div>
+
+{{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
 <div class="pagination">
-  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     {{ if .Paginator.HasPrev }}
     <a class="pagination-item older" href="{{ .Paginator.Prev.URL }}">Older</a>
     {{ else }}
@@ -37,8 +38,9 @@
     {{ else }}
     <span class="pagination-item newer">Newer</span>
     {{ end }}
-  {{ end }}
 </div>
+{{ end }}
+
 </div>
 
   </body>

@@ -305,6 +305,10 @@ tbody tr:nth-child(odd) th {
    margin-bottom: 1rem;
  }
 
+ .post:last-child {
+   margin-bottom: 0;
+ }
+
 .page {
   margin-bottom: 4em;
 }
